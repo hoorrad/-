@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Import fiddle as a JS Module - chain fiddles together</title>
+
+  <style>
+    /* Almost exactly the same as JS Modules 
+   but add  `.css` at the end. */
+
+@import url("@jsfiddle/rLd4uyep.css");
+
+  </style>
+
+  
+</head>
+<body>
+  <p></p>
+
+  <script>
+    // The module path to fiddles accepts all the common variations:
+//
+// - @jsfiddle/[fiddle].js
+// - @jsfiddle/[user]/[fiddle].js
+// - @jsfiddle/[user]/[fiddle]/[version].js
+// - @jsfiddle/[user]/[fiddle]/latest.js
+//
+// You need to remember to add `.js` at the end.
+
+import FiddleModule from "@jsfiddle/rLd4uyep.js"
+
+let message = FiddleModule.greet("Hello world")
+
+document.querySelector("p").innerHTML = message
+
+  </script>
+</body>
+</html>
